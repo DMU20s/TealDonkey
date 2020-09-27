@@ -10,7 +10,8 @@ class Question( models.Model):
         return self.question_texts
     
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() -datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
     question_texts = models.CharField(max_length=200) #Set max charactor question
     pub_date = models.DateTimeField('date published') #Set published date
 
