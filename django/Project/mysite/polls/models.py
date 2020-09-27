@@ -5,7 +5,7 @@ from django.utils import timezone
 
 # Create your models here.
 
-class Questions( models.Model):
+class Question( models.Model):
     def __str__(self):
         return self.question_texts
     
@@ -16,9 +16,9 @@ class Questions( models.Model):
 
 
 
-class Choices(models.Model):
+class Choice(models.Model):
     def __str__(self):
         return self.choice_text
-    question = models.ForeignKey(Questions, on_delete=models.CASCADE) #Make a choose option
+    question = models.ForeignKey(Question, on_delete=models.CASCADE) #Make a choose option
     choice_text = models.CharField(max_length=200) # Make choice text
     votes = models.IntegerField(default=0) #Amount of people who chose this vote
