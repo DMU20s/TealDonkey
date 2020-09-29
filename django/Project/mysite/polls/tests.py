@@ -7,6 +7,7 @@ from django.test import TestCase
 
 
 
-class QuestionModelTests(TestCase)
+class QuestionModelTests(TestCase):
+    pass
 
     
